@@ -1,18 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Container } from './App.styles'
+import Header from './features/header/Header'
+import ListCards from './features/list-items/ListCards'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Counter />
-
-        TEste de render
-      </header>
-    </div>
-  );
+    <Container>
+      <Header />
+      <ListCards />
+    </Container>
+  )
 }
 
-export default App;
+export default App

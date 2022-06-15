@@ -5,7 +5,6 @@ const rootReducer = combineReducers({
   ToolsReducer
 })
 
-
 export type AppState = ReturnType<typeof rootReducer>
 
 export default rootReducer

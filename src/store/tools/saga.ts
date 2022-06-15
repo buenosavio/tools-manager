@@ -1,6 +1,6 @@
-import { call, CallEffect, PutEffect, put, takeLatest } from "@redux-saga/core/effects";
 import axios from "axios";
 import { toolActions, ToolState } from "./duck";
+import { call, CallEffect, PutEffect, put, takeLatest } from "@redux-saga/core/effects";
 
 const api = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/pokemon/ditto'
