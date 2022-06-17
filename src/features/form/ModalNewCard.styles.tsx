@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100vw;
-  min-height: 1000vh;
   background: rgba(200, 200, 200, 0.8);
   position: fixed;
   left: 0;
@@ -19,8 +17,6 @@ export const Modal = styled.div`
   height: 450px;
   background: white;
   border-radius: 5px;
-  position: fixed;
-  top: 20%;
   padding-inline: 28px;
   padding-top: 5px;
   box-sizing: border-box;
