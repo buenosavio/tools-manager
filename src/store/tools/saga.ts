@@ -1,17 +1,29 @@
-import axios from "axios";
-import { toolActions, ToolState } from "./duck";
-import { call, CallEffect, PutEffect, put, takeLatest } from "@redux-saga/core/effects";
+import axios from 'axios'
+import { Tool, toolActions, ToolState } from './duck'
+import {
+  call,
+  CallEffect,
+  PutEffect,
+  put,
+  takeLatest
+} from '@redux-saga/core/effects'
 
 const api = axios.create({
-  baseURL: 'https://pokeapi.co/api/v2/pokemon/ditto'
+  baseURL: 'https://pokeapi.co/api/v2/pokemon'
 })
 
 const fetchTools = async () => {
-  const response = await api.get('')
+  const response = await api.get(`/ditto`)
+  console.log('cheiguei aqui: ', response.data)
   return response.data
 }
 
-function* load(): Generator<CallEffect<ToolState[]> | PutEffect, void, ToolState[]> {
+function* load(): Generator<
+  CallEffect<ToolState> | PutEffect,
+  void,
+  ToolState
+> {
+  console.log('cheiguei aqui: asdasdasd')
   try {
     const response = yield call(fetchTools)
     yield put(toolActions.set(response))

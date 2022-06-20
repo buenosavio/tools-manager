@@ -2,15 +2,18 @@ import { useState } from 'react'
 import { CardItem, ItemDetails, RemoveButton } from './Card.styles'
 import RemoveCard from './ModalRemoveCard'
 
-const Card = () => {
+const Card = ({ item }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>()
-
   return (
     <CardItem>
       <ItemDetails>
-        <h4>Notion</h4>
-        <p>Texto....</p>
-        <p>Tags.....</p>
+        <h4>{item.name}</h4>
+        <p>{item.description}</p>
+        {item.tag.map((tag: any) => (
+          <div key={tag.id}>
+            <p>#{tag.name}</p>
+          </div>
+        ))}
       </ItemDetails>
       <RemoveButton
         onClick={() => {
@@ -19,7 +22,7 @@ const Card = () => {
       >
         remove
       </RemoveButton>
-      {modalOpen && <RemoveCard handleOpen={setModalOpen} />}
+      {modalOpen && <RemoveCard handleOpen={setModalOpen} item={item} />}
     </CardItem>
   )
 }

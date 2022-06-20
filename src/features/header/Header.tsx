@@ -9,8 +9,11 @@ import {
 } from './Header.styles'
 import ModalNewCard from '../form/ModalNewCard'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { toolActions } from '../../store/tools/duck'
 
 const Header = () => {
+  const dispatch = useDispatch()
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
@@ -19,7 +22,12 @@ const Header = () => {
       <SubTitlePage>Very Useful Tools to Remember</SubTitlePage>
       <SearchSection>
         <div>
-          <InputSearch type="text" placeholder="Search..." />
+          <InputSearch
+            type="text"
+            placeholder="Search..."
+            onChange={e => dispatch(toolActions.search(e.target.value))}
+            //value={}
+          />
           <input type="checkbox" />
           <SpanSearchTags>search in tags only</SpanSearchTags>
         </div>

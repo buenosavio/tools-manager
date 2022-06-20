@@ -1,4 +1,7 @@
+import { useFormik } from 'formik'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { toolActions } from '../../store/tools/duck'
 import {
   Form,
   Modal,
@@ -17,28 +20,58 @@ interface OpenModal {
 }
 
 const ModalNewCard = ({ setOpenModal }: OpenModal) => {
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    console.log('Ei', e.target.value)
-    setOpenModal(false)
-  }
+  const dispatch = useDispatch()
 
-  const [nome, setNome] = useState()
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      description: '',
+      link: '',
+      tag: [],
+      id: ''
+    },
+    onSubmit: values => {
+      setOpenModal(false)
+      dispatch(toolActions.create(values))
+    }
+  })
 
   return (
     <Container>
       <Modal>
-        <Form onSubmit={e => handleSubmit(e)}>
+        <Form onSubmit={formik.handleSubmit}>
           <TitleForm> + Add new tool</TitleForm>
-          <Label>Tool Name</Label>
-          <Input type="text" name="name" />
-          <Label>Tool Link</Label>
-          <Input type="text" />
-          <Label>Tool description</Label>
-          <TextArea />
-          <Label>Tool Tags</Label>
-          <Input type="text" />
-
+          <Label htmlFor="name">Tool Name</Label>
+          <Input
+            type="text"
+            name="name"
+            id="name"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+          />
+          <Label htmlFor="link">Tool Link</Label>
+          <Input
+            type="text"
+            name="link"
+            id="link"
+            onChange={formik.handleChange}
+            value={formik.values.link}
+          />
+          <Label htmlFor="description">Tool description</Label>
+          <TextArea
+            id="description"
+            name="description"
+            onChange={formik.handleChange}
+            value={formik.values.description}
+          />
+          <Label htmlFor="tags">Tool Tags</Label>
+          <Input
+            type="text"
+            id="tag"
+            name="tag"
+            onChange={formik.handleChange}
+            value={formik.values.tag}
+          />
           <FooterForm>
             <ButtonCancel
               onClick={() => {

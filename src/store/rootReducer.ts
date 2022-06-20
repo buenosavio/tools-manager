@@ -1,8 +1,8 @@
-import ToolsReducer from './tools/duck'
-import {combineReducers} from '@reduxjs/toolkit'
+import tools from './tools/duck'
+import { combineReducers } from '@reduxjs/toolkit'
 
 const rootReducer = combineReducers({
-  ToolsReducer
+  tools
 })
 
 export type AppState = ReturnType<typeof rootReducer>
