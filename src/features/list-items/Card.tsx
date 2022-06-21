@@ -9,11 +9,11 @@ const Card = ({ item }: any) => {
       <ItemDetails>
         <h4>{item.name}</h4>
         <p>{item.description}</p>
-        {item.tag.map((tag: any) => (
+        {/* {item.tag.map((tag: any) => (
           <div key={tag.id}>
             <p>#{tag.name}</p>
           </div>
-        ))}
+        ))} */}
       </ItemDetails>
       <RemoveButton
         onClick={() => {

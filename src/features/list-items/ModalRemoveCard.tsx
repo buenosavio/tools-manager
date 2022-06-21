@@ -15,9 +15,11 @@ interface HandleOpen {
 
 const RemoveCard = ({ item, handleOpen }: HandleOpen) => {
   const dispatch = useDispatch()
+  console.log(item)
 
-  const removeF = (e: any) => {
-    console.log(e)
+  const removeTool = (item: any) => {
+    dispatch(toolActions.remove(item.id))
+    handleOpen(false)
   }
 
   return (
@@ -27,12 +29,10 @@ const RemoveCard = ({ item, handleOpen }: HandleOpen) => {
           <img src={removeIcon} alt="Imagem de um ícone em X" />
           Remove tool
         </TitleForm>
-        <h3>Are you sure you want to remove?</h3>
+        <h3>Are sure you want to remove?</h3>
         <FooterForm>
           <ButtonCancel onClick={() => handleOpen(false)}>Cancel</ButtonCancel>
-          <ButtonAdd onClick={() => dispatch(toolActions.remove(item.name))}>
-            Yes, remove
-          </ButtonAdd>
+          <ButtonAdd onClick={() => removeTool(item)}>Yes, remove</ButtonAdd>
         </FooterForm>
       </Modal>
     </Container>

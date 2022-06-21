@@ -28,7 +28,10 @@ const Header = () => {
             onChange={e => dispatch(toolActions.search(e.target.value))}
             //value={}
           />
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            onChange={() => dispatch(toolActions.toggleIsOnlyTag())}
+          />
           <SpanSearchTags>search in tags only</SpanSearchTags>
         </div>
         <ButtonAdd onClick={() => setModalOpen(true)}>Add</ButtonAdd>

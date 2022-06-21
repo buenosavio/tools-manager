@@ -16,25 +16,33 @@ export interface Tool {
 export interface ToolState {
   tools: Tool[] | []
   isOnlyTag: boolean
+  loading: boolean
 }
 
 export const initialState: ToolState = {
   tools: [],
-  isOnlyTag: false
+  isOnlyTag: false,
+  loading: true
 }
 
 const toolSlice = createSlice({
   name: 'tools',
   initialState,
   reducers: {
-    set: (state, { payload }: PayloadAction<ToolState>) => ({
+    load: state => ({ ...state, loading: false }),
+    set: (state, { payload }: PayloadAction<any>) => ({
       ...state,
-      ...payload
+      tools: payload
     }),
     toggleIsOnlyTag: state => ({ ...state, isOnlyTag: !state.isOnlyTag }),
     search: (state, { payload }: PayloadAction<string>) => ({
       ...state,
-      tools: state.tools.filter(item => item.name.includes(payload))
+      tools: state.tools.filter(item =>
+        state.isOnlyTag
+          ? //? item.tag.map(tool => tool.name.includes(payload))
+            item.description.includes(payload)
+          : item.name.includes(payload)
+      )
     }),
     create: (state, { payload }: PayloadAction<any>) => ({
       ...state,
@@ -42,7 +50,7 @@ const toolSlice = createSlice({
     }),
     remove: (state, { payload }: PayloadAction<string>) => ({
       ...state,
-      tools: state.tools.filter(tool => tool.name !== payload)
+      tools: state.tools.filter(tool => tool.id !== payload)
     })
   }
 })
