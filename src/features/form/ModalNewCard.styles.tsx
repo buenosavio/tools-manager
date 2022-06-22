@@ -104,8 +104,7 @@ export const FooterForm = styled.footer`
   align-items: center;
   justify-content: end;
   gap: 8px;
-  /* margin-inline: 28px; */
-  margin-bottom: 25px;
+  margin-top: 15px;
 `
 export const TextAlert = styled.p`
   color: red;

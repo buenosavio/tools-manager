@@ -26,11 +26,10 @@ const Header = () => {
             type="text"
             placeholder="Search..."
             onChange={e => dispatch(toolActions.search(e.target.value))}
-            //value={}
           />
           <input
             type="checkbox"
-            onChange={() => dispatch(toolActions.toggleIsOnlyTag())}
+            onClick={() => dispatch(toolActions.toggleIsOnlyTag())}
           />
           <SpanSearchTags>search in tags only</SpanSearchTags>
         </div>

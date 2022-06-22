@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export interface Tag {
   id: string
   name: string
+  label: string
 }
 
 export interface Tool {
@@ -17,12 +18,14 @@ export interface ToolState {
   tools: Tool[] | []
   isOnlyTag: boolean
   loading: boolean
+  search: string
 }
 
 export const initialState: ToolState = {
   tools: [],
-  isOnlyTag: false,
-  loading: true
+  isOnlyTag: true,
+  loading: true,
+  search: ''
 }
 
 const toolSlice = createSlice({
@@ -37,12 +40,7 @@ const toolSlice = createSlice({
     toggleIsOnlyTag: state => ({ ...state, isOnlyTag: !state.isOnlyTag }),
     search: (state, { payload }: PayloadAction<string>) => ({
       ...state,
-      tools: state.tools.filter(item =>
-        state.isOnlyTag
-          ? //? item.tag.map(tool => tool.name.includes(payload))
-            item.description.includes(payload)
-          : item.name.includes(payload)
-      )
+      search: payload
     }),
     create: (state, { payload }: PayloadAction<any>) => ({
       ...state,

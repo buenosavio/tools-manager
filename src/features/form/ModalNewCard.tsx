@@ -39,7 +39,6 @@ const ModalNewCard = ({ setOpenModal }: OpenModal) => {
 
   const setTagList = (value: string) => {
     selectedTags.push(value)
-    return selectedTags
   }
 
   const options = [

@@ -11,7 +11,6 @@ import RemoveCard from './ModalRemoveCard'
 
 const Card = ({ item }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>()
-  console.log(item)
 
   return (
     <CardItem>
