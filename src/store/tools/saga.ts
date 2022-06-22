@@ -1,7 +1,7 @@
 import { api } from '../../services/api'
 import { Notify } from 'notiflix/build/notiflix-notify-aio'
 import { PayloadAction } from '@reduxjs/toolkit'
-import { toolActions, ToolState } from './duck'
+import { Tool, toolActions, ToolState } from './duck'
 import {
   all,
   call,
@@ -27,11 +27,7 @@ const removeTool = async (payload: void) => {
   return response.data
 }
 
-function* load(): Generator<
-  CallEffect<ToolState> | PutEffect,
-  void,
-  ToolState
-> {
+function* load(): Generator<CallEffect<Tool[]> | PutEffect, void, Tool[]> {
   try {
     const response = yield call(fetchTools)
     yield put(toolActions.set(response))

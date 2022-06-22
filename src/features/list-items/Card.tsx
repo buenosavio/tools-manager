@@ -1,19 +1,30 @@
 import { useState } from 'react'
-import { CardItem, ItemDetails, RemoveButton } from './Card.styles'
+import {
+  CardItem,
+  ItemDetails,
+  RemoveButton,
+  TagsList,
+  Title,
+  Description
+} from './Card.styles'
 import RemoveCard from './ModalRemoveCard'
 
 const Card = ({ item }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>()
+  console.log(item)
+
   return (
     <CardItem>
       <ItemDetails>
-        <h4>{item.name}</h4>
-        <p>{item.description}</p>
-        {/* {item.tag.map((tag: any) => (
-          <div key={tag.id}>
-            <p>#{tag.name}</p>
-          </div>
-        ))} */}
+        <Title>{item.name}</Title>
+        <Description>{item.description}</Description>
+        <TagsList>
+          {item.tag[item.tag.length - 1].map((tag: any) => (
+            <div key={tag.value}>
+              <p>#{tag.label}</p>
+            </div>
+          ))}
+        </TagsList>
       </ItemDetails>
       <RemoveButton
         onClick={() => {

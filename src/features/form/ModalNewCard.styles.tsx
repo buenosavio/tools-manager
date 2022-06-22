@@ -107,3 +107,10 @@ export const FooterForm = styled.footer`
   /* margin-inline: 28px; */
   margin-bottom: 25px;
 `
+export const TextAlert = styled.p`
+  color: red;
+  margin: 0;
+  line-height: 1px;
+  font-size: 18px;
+  text-align: end;
+`

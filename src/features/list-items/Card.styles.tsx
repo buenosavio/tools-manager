@@ -18,6 +18,7 @@ export const ItemDetails = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  min-width: 100%;
 `
 
 export const RemoveButton = styled.button`
@@ -34,4 +35,27 @@ export const RemoveButton = styled.button`
   :hover {
     cursor: pointer;
   }
+`
+
+export const TagsList = styled.div`
+  min-width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+  font-size: 18px;
+  font-weight: 700;
+  color: #170c3a;
+`
+
+export const Title = styled.p`
+  font-weight: 400;
+  font-size: 24px;
+  color: #170c3a;
+`
+
+export const Description = styled.p`
+  font-weight: 400;
+  font-size: 18px;
+  color: #170c3a;
 `

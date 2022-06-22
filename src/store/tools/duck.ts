@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-interface Tag {
+export interface Tag {
   id: string
   name: string
 }
@@ -30,7 +30,7 @@ const toolSlice = createSlice({
   initialState,
   reducers: {
     load: state => ({ ...state, loading: false }),
-    set: (state, { payload }: PayloadAction<any>) => ({
+    set: (state, { payload }: PayloadAction<Tool[]>) => ({
       ...state,
       tools: payload
     }),
