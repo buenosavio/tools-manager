@@ -24,6 +24,7 @@ const Header = () => {
         <div>
           <InputSearch
             type="text"
+            name="search"
             placeholder="Search..."
             onChange={e => dispatch(toolActions.search(e.target.value))}
           />

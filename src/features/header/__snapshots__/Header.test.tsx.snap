@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should be renderer ok renders correctly by default UI 1`] = `
+<header
+  className="sc-bczRLJ cdzGpq"
+>
+  <h1
+    className="sc-gsnTZi iHDvAZ"
+  >
+    VUTTR
+  </h1>
+  <h3
+    className="sc-dkzDqf ICVwW"
+  >
+    Very Useful Tools to Remember
+  </h3>
+  <div
+    className="sc-hKMtZM idGchu"
+  >
+    <div>
+      <input
+        className="sc-eCYdqJ gSofyM"
+        name="search"
+        onChange={[Function]}
+        placeholder="Search..."
+        type="text"
+      />
+      <input
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="sc-jSMfEi icURsM"
+      >
+        search in tags only
+      </span>
+    </div>
+    <button
+      className="sc-gKXOVf cCHAos"
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+</header>
+`;
