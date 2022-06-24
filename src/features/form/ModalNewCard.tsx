@@ -1,6 +1,6 @@
-import { ErrorMessage, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import { useDispatch } from 'react-redux'
-import { Tag, toolActions } from '../../store/tools/duck'
+import { toolActions } from '../../store/tools/duck'
 import Select from 'react-select'
 import * as Yup from 'yup'
 import {
@@ -20,11 +20,6 @@ import { useState } from 'react'
 
 interface OpenModal {
   setOpenModal: (arg0: boolean) => void
-}
-
-interface Value {
-  value: string
-  label: string
 }
 
 const toolSchema = Yup.object().shape({
@@ -106,7 +101,9 @@ const ModalNewCard = ({ setOpenModal }: OpenModal) => {
           {formik.errors.description && formik.touched.description ? (
             <TextAlert>{formik.errors.description}</TextAlert>
           ) : null}
-          <Label htmlFor="tags">Tool Tags</Label>
+          <Label id="tags" htmlFor="tags">
+            Tool Tags
+          </Label>
           <Select
             id="tags"
             name="tags"

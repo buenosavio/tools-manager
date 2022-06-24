@@ -11,6 +11,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
+  overflow: auto;
 `
 export const Modal = styled.div`
   width: 500px;

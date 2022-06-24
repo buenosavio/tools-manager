@@ -1,8 +1,9 @@
 import Header from './Header'
-import { Provider } from 'react-redux'
-import configureStore from 'redux-mock-store'
-import { render, renderHook, screen } from '@testing-library/react'
 import renderer from 'react-test-renderer'
+import configureStore from 'redux-mock-store'
+
+import { Provider } from 'react-redux'
+import { render, screen } from '@testing-library/react'
 
 describe('Header component should be renderer ok', () => {
   const initialState = { tools: [], isOnlyTag: true, loading: true, search: '' }
