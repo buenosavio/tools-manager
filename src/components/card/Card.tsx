@@ -7,7 +7,7 @@ import {
   Title,
   Description
 } from './Card.styles'
-import RemoveCard from './ModalRemoveCard'
+import RemoveCard from '../remove-tool/ModalRemoveCard'
 
 const Card = ({ item }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>()

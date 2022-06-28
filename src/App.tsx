@@ -1,6 +1,6 @@
 import { Container } from './App.styles'
-import Header from './features/header/Header'
-import ListCards from './features/list-items/ListCards'
+import Header from './components/header/Header'
+import ListCards from './components/list-cards/ListCards'
 
 function App() {
   return (

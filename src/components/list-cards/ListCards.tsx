@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import Card from './Card'
+import Card from '../card/Card'
 import toolSelector from '../../store/tools/selector'
 import { useEffect } from 'react'
 import { Tag, Tool, toolActions } from '../../store/tools/duck'
@@ -18,7 +18,8 @@ function ListCards() {
     dispatch(toolActions.load())
   }, [])
 
-  const filtered = tools.filter((tool: any) =>
+  const filtered = tools.filter(
+    (tool: any) =>
       !isOnlyTag
         ? tool.name.toLowerCase().includes(search.toLowerCase())
         : tool.description.toLowerCase().includes(search.toLowerCase()) //funciona

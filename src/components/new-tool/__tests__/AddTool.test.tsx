@@ -1,8 +1,9 @@
-import ModalNewCard from './ModalNewCard'
+import ModalNewCard from '../AddTool'
 import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
-import { render, screen } from '@testing-library/react'
+import withProvider from '../../../utils/withContext'
+import { mount } from 'enzyme'
 
 describe('UI render should be default', () => {
   const initialState = { tools: [], isOnlyTag: true, loading: true, search: '' }
@@ -29,21 +30,10 @@ describe('Form test values', () => {
   const store = mockStore(initialState)
   const openModal = () => true
 
-  test('input elements should be enable', () => {
-    render(
-      <Provider store={store}>
-        <ModalNewCard setOpenModal={openModal} />
-      </Provider>
-    )
+  const Component = withProvider(ModalNewCard, store)
 
-    const inputName = screen.getByLabelText('Tool Name')
-    const inputLink = screen.getByLabelText('Tool Link')
-    const inputDesc = screen.getByLabelText('Tool description')
-
-    expect(inputName).toBeEnabled()
-    expect(inputLink).toBeEnabled()
-    expect(inputDesc).toBeEnabled()
+  test('input elements should be clickabe', () => {
+    const renderComponent = mount(<Component setOpenModal={openModal} />)
+    renderComponent.find('#tool-name').at(0).simulate('click')
   })
-
-  test('Form onSubmit should call functions correctly', () => {})
 })

@@ -7,7 +7,7 @@ import {
   SpanSearchTags,
   SearchSection
 } from './Header.styles'
-import ModalNewCard from '../form/ModalNewCard'
+import ModalNewCard from '../new-tool/AddTool'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toolActions } from '../../store/tools/duck'
@@ -17,7 +17,7 @@ const Header = () => {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
-    <HeaderMain>
+    <HeaderMain id="headof">
       <TitlePage>VUTTR</TitlePage>
       <SubTitlePage>Very Useful Tools to Remember</SubTitlePage>
       <SearchSection>
@@ -34,7 +34,9 @@ const Header = () => {
           />
           <SpanSearchTags>search in tags only</SpanSearchTags>
         </div>
-        <ButtonAdd onClick={() => setModalOpen(true)}>Add</ButtonAdd>
+        <ButtonAdd id="add-btn" onClick={() => setModalOpen(true)}>
+          Add
+        </ButtonAdd>
         {modalOpen && <ModalNewCard setOpenModal={setModalOpen} />}
       </SearchSection>
     </HeaderMain>

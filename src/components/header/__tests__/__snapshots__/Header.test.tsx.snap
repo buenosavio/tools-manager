@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component should be renderer ok renders correctly by default UI 1`] = `
+exports[`Header: General test of component renders correctly by default UI 1`] = `
 <header
   className="sc-bczRLJ cdzGpq"
+  id="headof"
 >
   <h1
     className="sc-gsnTZi iHDvAZ"
@@ -37,6 +38,7 @@ exports[`Header component should be renderer ok renders correctly by default UI 
     </div>
     <button
       className="sc-gKXOVf cCHAos"
+      id="add-btn"
       onClick={[Function]}
     >
       Add

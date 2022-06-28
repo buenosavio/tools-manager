@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI render should be default Snap of screen new modal should be renderized correctly 1`] = `
+<div
+  className="sc-bczRLJ fesoAM"
+>
+  <div
+    className="sc-gsnTZi lpqPDs"
+  >
+    <form
+      className="sc-dkzDqf jSJjnj"
+    >
+      <p
+        className="sc-hKMtZM ddUFem"
+      >
+         + Add new tool
+      </p>
+      <label
+        className="sc-eCYdqJ jvWRvA"
+        htmlFor="tool-name"
+      >
+        Tool Name
+      </label>
+      <input
+        className="sc-gKXOVf hYXwfN"
+        id="tool-name"
+        name="tool-name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+      />
+      <label
+        className="sc-eCYdqJ jvWRvA"
+        htmlFor="tool-link"
+      >
+        Tool Link
+      </label>
+      <input
+        className="sc-gKXOVf hYXwfN"
+        id="tool-link"
+        name="tool-link"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+      />
+      <label
+        className="sc-eCYdqJ jvWRvA"
+        htmlFor="tool-desc"
+      >
+        Tool Description
+      </label>
+      <textarea
+        className="sc-jSMfEi eMJWXs"
+        id="tool-desc"
+        name="tool-desc"
+        onBlur={[Function]}
+        onChange={[Function]}
+        type="text"
+      />
+      <footer
+        className="sc-papXJ crZneE"
+      >
+        <button
+          className="sc-iBkjds eDUIER"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+        <button
+          className="sc-ftvSup rVEmU"
+          type="submit"
+        >
+          Add tool
+        </button>
+      </footer>
+    </form>
+  </div>
+</div>
+`;

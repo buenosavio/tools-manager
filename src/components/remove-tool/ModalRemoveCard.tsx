@@ -1,10 +1,6 @@
 import { Modal, Container, TitleForm } from './ModalRemoveCard.styles'
 import removeIcon from '../../media/removeIcon.svg'
-import {
-  ButtonCancel,
-  ButtonAdd,
-  FooterForm
-} from '../form/ModalNewCard.styles'
+import { ButtonCancel, ButtonAdd, FooterForm } from '../new-tool/AddTool.styles'
 import { useDispatch } from 'react-redux'
 import { toolActions } from '../../store/tools/duck'
 
