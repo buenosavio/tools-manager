@@ -7,7 +7,7 @@ import {
   Title,
   Description
 } from './Card.styles'
-import RemoveCard from '../remove-tool/ModalRemoveCard'
+import RemoveCard from '../remove-tool/RemoveTool'
 
 const Card = ({ item }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>()
@@ -18,14 +18,15 @@ const Card = ({ item }: any) => {
         <Title>{item.name}</Title>
         <Description>{item.description}</Description>
         <TagsList>
-          {item.tag[item.tag.length - 1].map((tag: any) => (
+          {/* {item.tag[item.tag.length - 1].map((tag: any) => (
             <div key={tag.value}>
               <p>#{tag.label}</p>
             </div>
-          ))}
+          ))} */}
         </TagsList>
       </ItemDetails>
       <RemoveButton
+        id="remove-btn"
         onClick={() => {
           setModalOpen(true)
         }}

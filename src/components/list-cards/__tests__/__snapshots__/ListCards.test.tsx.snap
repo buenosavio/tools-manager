@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test of component <ListCards /> Snapshot of component should be ok 1`] = `
+<div>
+  <div
+    className="sc-bjUoiL dEyjCG"
+  >
+    <img
+      alt=""
+      src="loading.gif"
+    />
+    <h2>
+      Loading....
+    </h2>
+  </div>
+</div>
+`;

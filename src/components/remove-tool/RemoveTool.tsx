@@ -1,4 +1,4 @@
-import { Modal, Container, TitleForm } from './ModalRemoveCard.styles'
+import { Modal, Container, TitleForm } from './RemoveTool.styles'
 import removeIcon from '../../media/removeIcon.svg'
 import { ButtonCancel, ButtonAdd, FooterForm } from '../new-tool/AddTool.styles'
 import { useDispatch } from 'react-redux'
@@ -9,10 +9,8 @@ interface HandleOpen {
   handleOpen: (arg0: boolean) => void
 }
 
-const RemoveCard = ({ item, handleOpen }: HandleOpen) => {
+const RemoveTool = ({ item, handleOpen }: HandleOpen) => {
   const dispatch = useDispatch()
-  console.log(item)
-
   const removeTool = (item: any) => {
     dispatch(toolActions.remove(item.id))
     handleOpen(false)
@@ -35,4 +33,4 @@ const RemoveCard = ({ item, handleOpen }: HandleOpen) => {
   )
 }
 
-export default RemoveCard
+export default RemoveTool

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveTool Snapshot of component 1`] = `
+<div
+  className="sc-bczRLJ gZNRzs"
+>
+  <div
+    className="sc-gsnTZi bQzYaW"
+  >
+    <div
+      className="sc-dkzDqf ciSiFa"
+    >
+      <img
+        alt="Imagem de um ícone em X"
+        src="removeIcon.svg"
+      />
+      Remove tool
+    </div>
+    <h3>
+      Are sure you want to remove?
+    </h3>
+    <footer
+      className="sc-iqcoie efPTbX"
+    >
+      <button
+        className="sc-jqUVSM TvhFC"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+      <button
+        className="sc-kDDrLX hUoWzT"
+        onClick={[Function]}
+      >
+        Yes, remove
+      </button>
+    </footer>
+  </div>
+</div>
+`;

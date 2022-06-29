@@ -32,7 +32,7 @@ describe('Form test values', () => {
 
   const Component = withProvider(ModalNewCard, store)
 
-  test('input elements should be clickabe', () => {
+  test('input elements should be clickabed', () => {
     const renderComponent = mount(<Component setOpenModal={openModal} />)
     renderComponent.find('#tool-name').at(0).simulate('click')
   })

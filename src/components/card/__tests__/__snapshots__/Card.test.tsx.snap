@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Snapshot of component <Card /> 1`] = `
+<div
+  className="sc-bczRLJ dXUUki"
+>
+  <div
+    className="sc-gsnTZi fnUJel"
+  >
+    <p
+      className="sc-eCYdqJ fJsota"
+    >
+      Tool 1
+    </p>
+    <p
+      className="sc-jSMfEi kLwNhX"
+    >
+      description of my tool
+    </p>
+    <div
+      className="sc-hKMtZM cdczjY"
+    />
+  </div>
+  <button
+    className="sc-dkzDqf cKLdQa"
+    id="remove-btn"
+    onClick={[Function]}
+  >
+    remove
+  </button>
+</div>
+`;

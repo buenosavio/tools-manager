@@ -57,20 +57,6 @@
       "id": 1
     },
     {
-      "name": "Dell Inspiton I79UY",
-      "description": "Computer for programming and develop systems in react and react native.",
-      "link": "www.dell.com.br",
-      "tag": [
-        [
-          {
-            "value": "1",
-            "label": "Computer"
-          }
-        ]
-      ],
-      "id": 2
-    },
-    {
       "name": "HP Intel 7007 IX9",
       "description": "a personal computer for programimg sustems in react and react native in this place.",
       "link": "www.hp.com.br",
