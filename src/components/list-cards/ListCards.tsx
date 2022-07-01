@@ -1,17 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux'
-import Card from '../card/Card'
-import toolSelector from '../../store/tools/selector'
-import { useEffect } from 'react'
-import { Tag, Tool, toolActions } from '../../store/tools/duck'
 import Loading from '../utils/Loading'
+import AllCards from './AllCards'
+import FilterCards from './FilterCards'
+import toolSelector from '../../store/tools/selector'
 import { Text } from './ListCards.styles'
+import { useEffect } from 'react'
 import { filteredItems } from '../../utils/filteredItems'
+import { toolActions, ToolState } from '../../store/tools/duck'
+import { useDispatch, useSelector } from 'react-redux'
 
 function ListCards({ callMe }: any) {
   const tools = useSelector(toolSelector.get)
   const isLoading = useSelector(toolSelector.isLoading)
   const search = useSelector(toolSelector.search)
-  const isOnlyTag = useSelector(toolSelector.isOnlyTag)
 
   const dispatch = useDispatch()
 
@@ -19,20 +19,16 @@ function ListCards({ callMe }: any) {
     callMe(dispatch(toolActions.load()))
   }, [])
 
-  const filtered: any = filteredItems(tools)
+  const toolsFiltered: ToolState[] = filteredItems(tools)
 
   return (
-    <div>
+    <>
       {!isLoading ? (
         tools.length > 0 ? (
           search.length > 0 ? (
-            <>
-              {filtered.map(({ item, i }: any) => (
-                <Card item={item} key={i} role="alert" />
-              ))}
-            </>
+            <FilterCards toolsFiltered={toolsFiltered} />
           ) : (
-            tools.map((tool, i) => <Card item={tool} key={i} role="alert" />)
+            <AllCards tools={tools} />
           )
         ) : (
           <Text>No tools registered</Text>
@@ -40,7 +36,7 @@ function ListCards({ callMe }: any) {
       ) : (
         <Loading />
       )}
-    </div>
+    </>
   )
 }
 

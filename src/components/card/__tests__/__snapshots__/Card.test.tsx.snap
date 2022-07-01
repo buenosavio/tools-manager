@@ -1,28 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Snapshot of component <Card /> 1`] = `
+.c0 {
+  position: relative;
+  background: #fdfdfd;
+  box-shadow: 5px 6px 7px rgba(0,0,0,0.25);
+  border: 1px solid #764e9e2c;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px 30px;
+  margin-bottom: 30px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 100%;
+}
+
+.c5 {
+  position: absolute;
+  top: 10%;
+  left: 92%;
+  width: 98px;
+  background: none;
+  border: none;
+  background-image: url(removeIcon.svg);
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  font-size: 18px;
+}
+
+.c5:hover {
+  cursor: pointer;
+}
+
+.c4 {
+  min-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  font-size: 18px;
+  font-weight: 700;
+  color: #170c3a;
+}
+
+.c2 {
+  font-weight: 400;
+  font-size: 24px;
+  color: #170c3a;
+}
+
+.c3 {
+  font-weight: 400;
+  font-size: 18px;
+  color: #170c3a;
+}
+
 <div
-  className="sc-bczRLJ dXUUki"
+  className="c0"
 >
   <div
-    className="sc-gsnTZi fnUJel"
+    className="c1"
   >
     <p
-      className="sc-eCYdqJ fJsota"
+      className="c2"
     >
       Tool 1
     </p>
     <p
-      className="sc-jSMfEi kLwNhX"
+      className="c3"
     >
       description of my tool
     </p>
     <div
-      className="sc-hKMtZM cdczjY"
+      className="c4"
     />
   </div>
   <button
-    className="sc-dkzDqf cKLdQa"
+    className="c5"
     id="remove-btn"
     onClick={[Function]}
   >

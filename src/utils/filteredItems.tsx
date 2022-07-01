@@ -6,7 +6,7 @@ export const filteredItems = (tools: any) => {
   const isOnlyTag = useSelector(toolSelector.isOnlyTag)
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const search = useSelector(toolSelector.search)
-  return tools.filter(
+  return tools?.filter(
     (tool: any) =>
       isOnlyTag
         ? tool.name.toLowerCase().includes(search.toLowerCase())

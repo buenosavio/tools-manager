@@ -9,11 +9,11 @@ import {
 } from './Card.styles'
 import RemoveCard from '../remove-tool/RemoveTool'
 
-const Card = ({ item }: any) => {
+const Card = ({ item, id }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>()
 
   return (
-    <CardItem>
+    <CardItem id={id}>
       <ItemDetails>
         <Title>{item.name}</Title>
         <Description>{item.description}</Description>
